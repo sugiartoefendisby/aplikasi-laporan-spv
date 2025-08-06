@@ -104,13 +104,6 @@ body {
   font-size: 1rem;
 }
 
-.report-date-display {
-  font-size: 0.8rem;
-  font-style: italic;
-  color: #aaffaa;
-  margin-left: 10px;
-}
-
 .job-package-section {
   background: rgba(255, 255, 255, 0.1);
   padding: 15px;
@@ -125,16 +118,15 @@ body {
 }
 
 .job-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid; /* Menggunakan grid untuk tata letak 2 kolom */
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom dengan lebar sama */
+  gap: 10px 15px; /* Jarak antar baris dan kolom */
   margin-bottom: 10px;
 }
 
 .job-details p {
   font-size: 0.9rem;
   margin: 0;
-  flex: 1 1 200px;
 }
 
 .job-details span {
@@ -184,19 +176,34 @@ body {
   min-height: 80px;
 }
 
-.job-package-table .deviation-output {
+/* Gaya untuk baris Deviasi yang baru */
+.job-package-table .deviasi-row th,
+.job-package-table .deviasi-row td {
+  background-color: rgba(
+    38,
+    66,
+    117,
+    0.8
+  ); /* Background untuk header deviasi */
+  color: aquamarine;
+  font-weight: 600;
+}
+
+.job-package-table .deviasi-cell-content {
   background: transparent;
   border: none;
   font-weight: bold;
   text-align: center;
+  display: block; /* Memastikan span mengambil lebar penuh cell */
+  padding: 5px; /* Sesuaikan padding */
 }
 
 .deviation-positive {
-  color: #aaffaa;
+  color: #aaffaa; /* Warna hijau terang untuk positif */
 }
 
 .deviation-negative {
-  color: #ff6347;
+  color: #ff6347; /* Warna merah terang untuk negatif */
 }
 
 .remaining-time {
@@ -377,7 +384,7 @@ body {
 
   .job-details {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Kembali ke 1 kolom untuk mobile */
     gap: 5px;
   }
 
@@ -402,6 +409,11 @@ body {
   .job-package-table input[type="number"],
   .job-package-table textarea {
     font-size: 0.8rem;
+  }
+
+  /* Font size for deviation text on mobile */
+  .job-package-table .deviasi-cell-content {
+    font-size: 0.8rem; /* Lebih kecil untuk mobile */
   }
 
   .floating-submit-container {
@@ -458,6 +470,11 @@ body {
   .job-package-table input[type="number"],
   .job-package-table textarea {
     font-size: 0.7rem;
+  }
+
+  /* Font size for deviation text on smaller mobile */
+  .job-package-table .deviasi-cell-content {
+    font-size: 0.7rem; /* Lebih kecil lagi untuk mobile sangat kecil */
   }
 
   .floating-submit-container {
