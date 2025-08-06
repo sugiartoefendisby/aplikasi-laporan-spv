@@ -2,7 +2,7 @@
 
 // URL Google Apps Script yang telah di-deploy sebagai Web App.
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyQzne5WCOpR6OnL9QBSCB65fW70MUXDQGAA5KMmrKCPaLaQQyB9vi-UCQg5_ouZii-1Q/exec";
+  "https://script.google.com/macros/s/AKfycbxcFu98N9gaEU8TEN0OMqDopNbm0xfIfGCoF-R1a6v3JdXA0PbU3m_cfMywU2AVfs9Paw/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const spvNameElement = document.getElementById("spvName");
@@ -49,58 +49,58 @@ document.addEventListener("DOMContentLoaded", () => {
           section.classList.add("job-package-section");
           section.dataset.akhirKontrak = pkg.akhirKontrak;
           section.innerHTML = `
-              <h3>${pkg.jobPackage || ""}</h3>
-              <div class="job-details">
-                <p>Penyedia: <span>${pkg.provider || ""}</span></p>
-                <p>Nilai: <span>${
-                  formatNumberWithThousandsSeparator(pkg.nilai) || "Belum diisi"
-                }</span></p>
-                <p>Periode Tanggal: <span>${formatDateForDisplay(
-                  pkg.awalKontrak
-                )} - ${formatDateForDisplay(pkg.akhirKontrak)}</span></p>
-                <p>Sisa Waktu: <span class="remaining-time" id="remainingTime_${index}">-</span></p>
-              </div>
-              <div class="table-container">
-                <table class="job-package-table">
-                  <thead>
-                    <tr>
-                      <th>Minggu Lalu</th>
-                      <th>Minggu Ini</th>
-                      <th>Rencana</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input type="number" name="lastWeek_${index}" class="last-week-input" step="0.01" />
+            <h3>${pkg.jobPackage || ""}</h3>
+            <div class="job-details">
+              <p>Penyedia: <span>${pkg.provider || ""}</span></p>
+              <p>Nilai: <span>${
+                formatNumberWithThousandsSeparator(pkg.nilai) || "Belum diisi"
+              }</span></p>
+              <p>Periode Tanggal: <span>${formatDateForDisplay(
+                pkg.awalKontrak
+              )} - ${formatDateForDisplay(pkg.akhirKontrak)}</span></p>
+              <p>Sisa Waktu: <span class="remaining-time" id="remainingTime_${index}">-</span></p>
+            </div>
+            <div class="table-container">
+              <table class="job-package-table">
+                <thead>
+                  <tr>
+                    <th>Minggu Lalu</th>
+                    <th>Minggu Ini</th>
+                    <th>Rencana</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="number" name="lastWeek_${index}" class="last-week-input" step="0.01" />
+                    </td>
+                    <td>
+                      <input type="number" name="thisWeek_${index}" class="this-week-input" data-index="${index}" step="0.01" />
+                    </td>
+                    <td>
+                      <input type="number" name="plan_${index}" class="plan-input" data-index="${index}" step="0.01" />
+                    </td>
+                  </tr>
+                  <tr class="deviasi-row">
+                      <th colspan="3">Deviasi</th>
+                  </tr>
+                  <tr>
+                      <td colspan="3" class="deviasi-cell">
+                          <span class="deviation-output deviasi-cell-content deviation-positive" id="deviationText_${index}">0.00</span>
                       </td>
-                      <td>
-                        <input type="number" name="thisWeek_${index}" class="this-week-input" data-index="${index}" step="0.01" />
+                  </tr>
+                  <tr>
+                      <th colspan="3">Kegiatan</th>
+                  </tr>
+                  <tr>
+                      <td colspan="3">
+                          <textarea name="activity_${index}"></textarea>
                       </td>
-                      <td>
-                        <input type="number" name="plan_${index}" class="plan-input" data-index="${index}" step="0.01" />
-                      </td>
-                    </tr>
-                    <tr class="deviasi-row">
-                        <th colspan="3">Deviasi</th>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="deviasi-cell">
-                            <span class="deviation-output deviasi-cell-content deviation-positive" id="deviationText_${index}">0.00</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th colspan="3">Kegiatan</th>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <textarea name="activity_${index}"></textarea>
-                        </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            `;
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          `;
           jobPackageSectionsContainer.appendChild(section);
         });
       } else {
@@ -400,18 +400,18 @@ document.addEventListener("DOMContentLoaded", () => {
     reportSummary.style.display = "block";
 
     let summaryHtml = `
-        <h2>Ringkasan Laporan Berhasil Dikirim</h2>
-        <button class="new-report-btn" id="newReportBtn">Buat Laporan Baru</button>
-        <div class="summary-details">
-          <p>Tanggal Laporan: <span>${new Date(
-            reportData[0].reportDate
-          ).toLocaleDateString("id-ID", {
-            day: "2-digit",
-            month: "short",
-            year: "numeric",
-          })}</span></p>
-        </div>
-      `;
+      <h2>Ringkasan Laporan Berhasil Dikirim</h2>
+      <button class="new-report-btn" id="newReportBtn">Buat Laporan Baru</button>
+      <div class="summary-details">
+        <p>Tanggal Laporan: <span>${new Date(
+          reportData[0].reportDate
+        ).toLocaleDateString("id-ID", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        })}</span></p>
+      </div>
+    `;
 
     reportData.forEach((item) => {
       const deviationValue = parseFloat(item.deviation);
@@ -425,21 +425,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       summaryHtml += `
-          <div class="summary-details">
-            <h3>${item.jobPackage}</h3>
-            <p>Penyedia: <span>${item.provider}</span></p>
-            <p>Nilai: <span>${
-              formatNumberWithThousandsSeparator(item.nilai) || "Belum diisi"
-            }</span></p>
-            <p>Progres Minggu Lalu: <span>${item.lastWeekProgress}%</span></p>
-            <p>Progres Minggu Ini: <span>${item.thisWeekProgress}%</span></p>
-            <p>Rencana: <span>${item.plan}%</span></p>
-            <p>Deviasi: <span class="${
-              deviationValue < 0 ? "deviation-negative" : "deviation-positive"
-            }">${deviationDisplay}</span></p>
-            <p>Kegiatan: <span>${item.activity}</span></p>
-          </div>
-        `;
+        <div class="summary-details">
+          <h3>${item.jobPackage}</h3>
+          <p>Penyedia: <span>${item.provider}</span></p>
+          <p>Nilai: <span>${
+            formatNumberWithThousandsSeparator(item.nilai) || "Belum diisi"
+          }</span></p>
+          <p>Progres Minggu Lalu: <span>${item.lastWeekProgress}%</span></p>
+          <p>Progres Minggu Ini: <span>${item.thisWeekProgress}%</span></p>
+          <p>Rencana: <span>${item.plan}%</span></p>
+          <p>Deviasi: <span class="${
+            deviationValue < 0 ? "deviation-negative" : "deviation-positive"
+          }">${deviationDisplay}</span></p>
+          <p>Kegiatan: <span>${item.activity}</span></p>
+        </div>
+      `;
     });
 
     reportSummary.innerHTML = summaryHtml;

@@ -3,7 +3,7 @@
 // URL Google Apps Script yang telah di-deploy sebagai Web App.
 // Anda harus mengganti URL ini dengan URL milik Anda sendiri setelah mengikuti instruksi di bawah.
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyQzne5WCOpR6OnL9QBSCB65fW70MUXDQGAA5KMmrKCPaLaQQyB9vi-UCQg5_ouZii-1Q/exec";
+  "https://script.google.com/macros/s/AKfycbxcFu98N9gaEU8TEN0OMqDopNbm0xfIfGCoF-R1a6v3JdXA0PbU3m_cfMywU2AVfs9Paw/exec";
 
 // Tunggu hingga seluruh konten DOM dimuat
 document.addEventListener("DOMContentLoaded", () => {
