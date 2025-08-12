@@ -1,16 +1,11 @@
 {
-  "id": "aplikasi-laporan-spv",
   "name": "Aplikasi Laporan SPV",
   "short_name": "Laporan SPV",
-  "lang": "id",
-  "dir": "ltr",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#264275",
   "theme_color": "#264275",
   "description": "Aplikasi laporan pekerjaan supervisor dengan integrasi Google Sheets",
-  "categories": ["productivity", "business"],
   "icons": [
     {
       "src": "/icon-192.png",
@@ -22,21 +17,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshot1.png",
-      "sizes": "1080x1920",
-      "type": "image/png"
-    },
-    {
-      "src": "/screenshot2.png",
-      "sizes": "1080x1920",
-      "type": "image/png"
-    }
-  ],
-  "launch_handler": {
-    "client_mode": "focus-existing"
-  },
-  "iarc_rating_id": ""
+  ]
 }
