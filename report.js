@@ -1,8 +1,8 @@
 // report.js
 
 // URL Google Apps Script yang telah di-deploy sebagai Web App.
-// const APPS_SCRIPT_URL =
-//   "https://script.google.com/macros/s/AKfycbxcFu98N9gaEU8TEN0OMqDopNbm0xfIfGCoF-R1a6v3JdXA0PbU3m_cfMywU2AVfs9Paw/exec";
+const APPS_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxcFu98N9gaEU8TEN0OMqDopNbm0xfIfGCoF-R1a6v3JdXA0PbU3m_cfMywU2AVfs9Paw/exec";
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#form-laporan');
@@ -42,4 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
 });
