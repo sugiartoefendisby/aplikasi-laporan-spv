@@ -13,6 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#264275">
   </head>
   <body>
     <section id="login">
@@ -54,5 +56,10 @@
 
     <!-- Hubungkan ke file JavaScript eksternal -->
     <script src="login.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+</script>
   </body>
 </html>
